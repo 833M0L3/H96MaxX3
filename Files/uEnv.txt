@@ -1,0 +1,23 @@
+LINUX=/zImage
+INITRD=/uInitrd
+
+# rk-3399
+#FDT=/dtb/rockchip/rk3399-rock-pi-4.dtb
+#FDT=/dtb/rockchip/rk3399-nanopc-t4.dtb
+#APPEND=root=LABEL=ROOTFS rootflags=data=writeback rw console=uart8250,mmio32,0xff1a0000 console=tty0 no_console_suspend consoleblank=0 fsck.fix=yes fsck.repair=yes net.ifnames=0
+
+# rk-3328
+#FDT=/dtb/rockchip/rk3328-box-trn9.dtb
+#FDT=/dtb/rockchip/rk3328-box.dtb
+#APPEND=root=LABEL=ROOTFS rootflags=data=writeback rw console=uart8250,mmio32,0xff130000 console=tty0 no_console_suspend consoleblank=0 fsck.fix=yes fsck.repair=yes net.ifnames=0
+
+# aw h6
+#FDT=/dtb/allwinner/sun50i-h6-tanix-tx6.dtb
+#APPEND=root=LABEL=ROOTFS rootflags=data=writeback rw console=ttyS0,115200 console=tty0 no_console_suspend consoleblank=0 fsck.fix=yes fsck.repair=yes net.ifnames=0
+#APPEND=root=LABEL=ROOTFS rootflags=data=writeback rw console=ttyS0,115200 console=tty0 no_console_suspend consoleblank=0 fsck.fix=yes fsck.repair=yes net.ifnames=0 mem=2048M video=HDMI-A-1:e
+
+# aml s9xxx
+#FDT=/dtb/amlogic/meson-g12a-x96-max-no-cvbs.dtb
+#FDT=/dtb/amlogic/meson-g12b-ugoos-am6-no-cvbs.dtb
+FDT=/dtb/amlogic/h96max-x3-test8.dtb
+APPEND=root=LABEL=ROOTFS rootflags=data=writeback rw console=ttyAML0,115200n8 console=tty0 no_console_suspend consoleblank=0 fsck.fix=yes fsck.repair=yes net.ifnames=0
