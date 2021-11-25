@@ -89,10 +89,15 @@ It is basically running a Ubuntu 20.7, you can host or do whatever you want. For
 * **Qbittorent Server**
 
 ![torrent](/torrent.png)
-* Using as a Printer Server
+* **Using as a Printer Server**
+
+![printer](/printer%20server.png)
+![printerserv](/printerserv2.png)
 * Docker
 * Dicord Bots Hosting
 * Heck you can even host a paper minecraft server on it. And it performs well. Don't belive me ? Check here https://youtu.be/2WHLUiJtN4E
 
-
-
+## Credits
+* https://forum.armbian.com/topic/13992-h96-max-x3-specifics-only/
+* https://forum.freaktab.com/forum/tv-player-support/amlogic-based-tv-players/s905x3/firmware-roms-tools-ds/812507-rom-mod-hk1-x3-h96-max-x3-vontar-x3-transpeed-x3-air-bqeel-y8-max-amlogic-s905x3/page14
+* 
