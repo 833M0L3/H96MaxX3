@@ -1,9 +1,9 @@
 # **Installing Ubuntu based Armbian Linux on H96 Max X3 TV Box**
 ![H96X3Max](/11-H96-max-x3-S905X3-rounded-mini-android-tv-box.jpg)
 
-Ok the main question is how did I end up with a TV Box instead of going with the popular miniature computers like Raspberry Pis. The thing is, Raspberry Pis here in my country are frikin expensive compared to these TV Boxes. A base model Raspberry Pi 3 with 1 GB RAM cost around Rs 8000 while I can get a TV Box with same performance CPU and RAM of 4 GB with just Rs 5800, not to forget about the plus points like built in heat sink, pre built plastic box for the board , built in EMMC memory of 32 GB or more, and so on.
+Ok the main question is how did I end up with a TV Box instead of going with the popular miniature computers like Raspberry Pis. The thing is, Raspberry Pis here in my country are frikin expensive compared to these TV Boxes. A base model Raspberry Pi 3 with 1 GB RAM cost around Rs 8000 while I can get a TV Box with same performance CPU and RAM of 4 GB with just Rs 5800, not to forget about all the plus points like built in heat sink, pre built plastic box for the board , built in EMMC memory of 32 GB or more, and so on.
 
-So, getting a TV Box is definitely a smart choice. But the problem is getting Linux run on it. Since these TV Boxes comes with Android OS pre installed and has a different way of booting, getting it to work with Linux is very tedious job. 
+So, getting a TV Box is definitely a smart choice. But the problem is getting Linux to run on it. Since these TV Boxes come with Android OS pre installed and have a different way of booting, getting it to work with Linux is a very tedious job. 
 
 ## Device specifications
 
@@ -29,10 +29,10 @@ HDMI    | HDMI 2.1 ,Support HDMI CEC, Dynamic HDR And And 8Kx4K@24 Max Resolutio
 ## Next Steps
 Download the files from this link : https://mega.nz/folder/A5kmDZAC#6t5FO2NUlIr-070EsGtfPA
 
-* Burn the ISO from the downloaded files you want on to your USB Flash Drive using Balena Etcher
+* Choose the ISO from the downloaded files you want and burn it on to your USB Flash Drive using Balena Etcher
 * Once it's complete, you should see a boot drive or any drive. Go there
 * Copy the  “h96max-x3-test8.dtb” ( from the files you downloaded ) to  /dtb/amlogic/ of your USB Drive
-* Then modify the uEnv.txt to load that dtb and uncomment the 'APPEND' entry on aml s9xxx section
+* Then modify the uEnv.txt to load that dtb ( you have to put the location of the file there ) and uncomment the 'APPEND' entry on aml s9xxx section
 
 It should look something like this
 ```javascript
@@ -63,20 +63,20 @@ APPEND=root=LABEL=ROOT_EMMC rootflags=data=writeback rw console=ttyAML0,115200n8
 
 * Now once everything is done save the file and disconnect the USB from the PC
 * Get your TV Box ready with TV Screen or Monitor and connect the USB in to you TV Box.
-* Make your your TV Box is powered off, now get that toothpick I talked about earlier and put it inside the AV Jack port, inside the AV Jack port there should a small clickable button, press and keep holding it with your toothpick and power on the TV Box until you see the Linux kernel loading screen, then release it.
+* Make sure your TV Box is powered off, now get that toothpick I talked about earlier and put it inside the AV Jack port. Inside the AV Jack port there should a small clickable button, press and keep holding it while you power on the TV Box until you see the Linux kernel loading screen, then release it.
 
 You are done !! If everything was done properly you should see the Armbian Linux screen. Follow the basic guide there and you should see a homescreen like this 
 ![armbianhome](/home.png)
 
 ## Dual boot with Android or Permanent Linux Box ?
-Since you have booted the Linux you can also permanently install it in to the box's built in EMMC, this will remove the existing Android OS and Linux will boot instead. IF you don't want to do that and use your USB drive as a portal bootable Armbian Linux then you should leave as it is, and skip the steps below.
+Since you have booted the Linux you can also permanently install it in to the box's built in eMMC Memory, this will remove the existing Android OS and Linux will boot instead. If you don't want to do that and use your USB drive as a portable bootable Armbian Linux then you should leave as it is, and skip the steps below.
 
 ## Installing Armbian Permanently into the TV Box ( You can reinstall Android OS by flashing original Box's firmware if you want but it will remove the Linux )
-* Look for the file install-aml.sh on /root and execute it or just directly execute it without looking for it by sudo ``/root/install-aml.sh ``. Follow the procedure and Linux will be installed into your TV Box's Storage. You can remove the USB Flash Drive and restart the TV Box.
+* Look for the file install-aml.sh on /root and execute it or just directly execute it without looking for it by ``sudo /root/install-aml.sh``. Follow the procedure and Linux will be installed into your TV Box's eMMC Memory. You can remove the USB Flash Drive and restart the TV Box.
 
 ## So, what next ?
 ![neofetch](/neofetch.png)
-It is basically running a Ubuntu 20.7, you can host or do whatever you want. For me, I am currently using this TV Box as a headless server and making do :
+It is basically Linux server running Ubuntu, you can host or do whatever you want. For me, I am currently using this TV Box as a headless server and using to do cool stuffs like :
 * **Hosting Pi-Hole and using it as a primary DNS Sever**
 
 ![pihole](/pihole.png)
@@ -100,4 +100,3 @@ It is basically running a Ubuntu 20.7, you can host or do whatever you want. For
 ## Credits
 * https://forum.armbian.com/topic/13992-h96-max-x3-specifics-only/
 * https://forum.freaktab.com/forum/tv-player-support/amlogic-based-tv-players/s905x3/firmware-roms-tools-ds/812507-rom-mod-hk1-x3-h96-max-x3-vontar-x3-transpeed-x3-air-bqeel-y8-max-amlogic-s905x3/page14
-* 
