@@ -27,41 +27,9 @@ HDMI    | HDMI 2.1 ,Support HDMI CEC, Dynamic HDR And And 8Kx4K@24 Max Resolutio
 * Balena Etcher
 
 ## Next Steps
-Download the files from this link : https://mega.nz/folder/A5kmDZAC#6t5FO2NUlIr-070EsGtfPA
+Download the image file based on your SoC i.e : S905x3 from this link : https://github.com/ophub/amlogic-s9xxx-armbian/releases
 
-* Choose the ISO from the downloaded files you want and burn it on to your USB Flash Drive using Balena Etcher
-* Once it's complete, you should see a boot drive or any drive. Go there
-* Copy the  “h96max-x3-test8.dtb” ( from the files you downloaded ) to  /dtb/amlogic/ of your USB Drive
-* Then modify the uEnv.txt to load that dtb ( you have to put the location of the file there ) and uncomment the 'APPEND' entry on aml s9xxx section
-
-It should look something like this
-```javascript
-LINUX=/zImage
-INITRD=/uInitrd
-
-# rk-3399
-#FDT=/dtb/rockchip/rk3399-rock-pi-4.dtb
-FDT=/dtb/rockchip/rk3399-nanopc-t4.dtb
-APPEND=root=LABEL=ROOT_EMMC rootflags=data=writeback rw console=uart8250,mmio32,0xff1a0000 console=tty0 no_console_suspend consoleblank=0 fsck.fix=yes fsck.repair=yes net.ifnames=0
-
-# rk-3328
-#FDT=/dtb/rockchip/rk3328-box-trn9.dtb
-#FDT=/dtb/rockchip/rk3328-box.dtb
-#APPEND=root=LABEL=ROOT_EMMC rootflags=data=writeback rw console=uart8250,mmio32,0xff130000 console=tty0 no_console_suspend consoleblank=0 fsck.fix=yes fsck.repair=yes net.ifnames=0
-
-# aw h6
-#FDT=/dtb/allwinner/sun50i-h6-tanix-tx6.dtb
-#APPEND=root=LABEL=ROOT_EMMC rootflags=data=writeback rw console=ttyS0,115200 console=tty0 no_console_suspend consoleblank=0 fsck.fix=yes fsck.repair=yes net.ifnames=0
-#APPEND=root=LABEL=ROOT_EMMC rootflags=data=writeback rw console=ttyS0,115200 console=tty0 no_console_suspend consoleblank=0 fsck.fix=yes fsck.repair=yes net.ifnames=0 mem=2048M video=HDMI-A-1:e
-
-# aml s9xxx
-FDT=/dtb/amlogic/h96max-x3-test8.dtb
-#FDT=/dtb/amlogic/meson-g12b-ugoos-am6-no-cvbs.dtb
-#FDT=/dtb/amlogic/meson-g12b-odroid-n2.dtb
-APPEND=root=LABEL=ROOT_EMMC rootflags=data=writeback rw console=ttyAML0,115200n8 console=tty0 no_console_suspend consoleblank=0 fsck.fix=yes fsck.repair=yes net.ifnames=0
-```
-
-* Now once everything is done save the file and disconnect the USB from the PC
+* Burn it on to your USB Flash Drive using Balena Etcher
 * Get your TV Box ready with TV Screen or Monitor and connect the USB in to you TV Box.
 * Make sure your TV Box is powered off, now get that toothpick I talked about earlier and put it inside the AV Jack port. Inside the AV Jack port there should a small clickable button, press and keep holding it while you power on the TV Box until you see the Linux kernel loading screen, then release it.
 
@@ -72,7 +40,7 @@ You are done !! If everything was done properly you should see the Armbian Linux
 Since you have booted the Linux you can also permanently install it in to the box's built in eMMC Memory, this will remove the existing Android OS and Linux will boot instead. If you don't want to do that and use your USB drive as a portable bootable Armbian Linux then you should leave as it is, and skip the steps below.
 
 ## Installing Armbian Permanently into the TV Box ( You can reinstall Android OS by flashing original Box's firmware if you want but it will remove the Linux )
-* Look for the file install-aml.sh on /root and execute it or just directly execute it without looking for it by ``sudo /root/install-aml.sh``. Follow the procedure and Linux will be installed into your TV Box's eMMC Memory. You can remove the USB Flash Drive and restart the TV Box.
+*  Just directly execute this command ``armbian-install``. Follow the procedure and Linux will be installed into your TV Box's eMMC Memory. You can remove the USB Flash Drive and restart the TV Box. For more information you can check out his awesome github repo https://github.com/ophub/amlogic-s9xxx-armbian
 
 ## So, what next ?
 ![neofetch](/neofetch.png)
@@ -100,3 +68,4 @@ It is basically Linux server running Ubuntu, you can host or do whatever you wan
 ## Credits
 * https://forum.armbian.com/topic/13992-h96-max-x3-specifics-only/
 * https://forum.freaktab.com/forum/tv-player-support/amlogic-based-tv-players/s905x3/firmware-roms-tools-ds/812507-rom-mod-hk1-x3-h96-max-x3-vontar-x3-transpeed-x3-air-bqeel-y8-max-amlogic-s905x3/page14
+* https://github.com/ophub/amlogic-s9xxx-armbian
