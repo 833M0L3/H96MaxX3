@@ -42,6 +42,11 @@ Since you have booted the Linux you can also permanently install it in to the bo
 ## Installing Armbian Permanently into the TV Box ( You can reinstall Android OS by flashing original Box's firmware if you want but it will remove the Linux )
 *  Just directly execute this command ``armbian-install``. Follow the procedure and Linux will be installed into your TV Box's eMMC Memory. You can remove the USB Flash Drive and restart the TV Box. For more information you can check out his awesome github repo https://github.com/ophub/amlogic-s9xxx-armbian
 
+## How to revert back to the original Android TV Box Firmware or incase if you bricked your box how to unbrick it?
+There are possibilities that things might go wrong and you might end up bricking your device. Or maybe you just wan to get your device back to the what it used to be. Well , the unbricking process is very easy. You need a PC running Windows OS and **a USB Male to Male Type A cable**.  Go to this site https://www.h96tvbox.com/content/6-Firmware-upgrade and select download which you can find near the H96 Max X3 option.
+
+Download all the files listed there. Watch the video which shows you how to install the USB Burning Tool properly. **This is very important !** . After you are done installing it and doing other stuffs like copying the license folder to the main installation folder. Get your TV Box, open USB Burning Tool and import the image file that you downloaded. And wait few sec and click on start. Then get the toothpick and and the USB Male to Male Type A  cable. Press and hold the AV hole button with the toothpick, and connect the the USB Male to Male Type A  to the black port of the TV BOX and with PC. Then it should start downloading the firmware on the USB Burning Tool. Please remember this, you don't need your TV Box to be connected to a power source. Only connecting your PC with TV Box using USB Male to Male Type A cable is enough.
+
 ## So, what next ?
 ![neofetch](/neofetch.png)
 It is basically Linux server running Ubuntu, you can host or do whatever you want. For me, I am currently using this TV Box as a headless server and using to do cool stuffs like :
