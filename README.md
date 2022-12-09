@@ -30,6 +30,11 @@ HDMI    | HDMI 2.1 ,Support HDMI CEC, Dynamic HDR And And 8Kx4K@24 Max Resolutio
 Download the image file based on your SoC i.e : S905x3 from this link : https://github.com/ophub/amlogic-s9xxx-armbian/releases
 
 * Burn it on to your USB Flash Drive using Balena Etcher
+* Mount newly created BOOT volume, and:
+  ```
+  cp u-boot-x96maxplus.bin u-boot.ext
+  vi uEnv.txt # change FDT=/dtb/amlogic/meson-sm1-h96-max-x3.dtb
+  ```
 * Get your TV Box ready with TV Screen or Monitor and connect the USB in to you TV Box.
 * Make sure your TV Box is powered off, now get that toothpick I talked about earlier and put it inside the AV Jack port. Inside the AV Jack port there should a small clickable button, press and keep holding it while you power on the TV Box until you see the Linux kernel loading screen, then release it.
 
